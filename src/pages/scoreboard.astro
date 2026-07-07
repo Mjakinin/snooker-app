@@ -1,0 +1,86 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Snooker-Scoreboard mit Spielerlisten, Punktebuttons und automatischer Sortierung."
+    />
+    <link rel="icon" href="/crown.svg" type="image/svg+xml" />
+    <title>Scoreboard | Snooker Scoreboard</title>
+  </head>
+  <body>
+    <div class="page-shell app-page">
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Snooker Scoreboard</span>
+        </a>
+        <a class="nav-link" href="/">Startseite</a>
+      </nav>
+
+      <main>
+        <header class="scoreboard-header">
+          <p class="eyebrow">Live ranking</p>
+          <h1>Scoreboard</h1>
+          <p class="lead">
+            Spieler hinzufuegen, Kugelwerte buchen und nach jeder Runde automatisch sortieren.
+          </p>
+        </header>
+
+        <section class="scoreboard-layout" aria-label="Snooker Scoreboard">
+          <aside class="control-area" aria-label="Spieler verwalten">
+            <h2>Spieler</h2>
+            <form class="player-form" data-player-form>
+              <label class="field-label" for="player-name">Name</label>
+              <div class="input-row">
+                <input
+                  class="player-input"
+                  id="player-name"
+                  data-player-input
+                  name="player-name"
+                  type="text"
+                  maxlength="20"
+                  autocomplete="off"
+                  placeholder="Spielername"
+                />
+                <button class="submit-button" type="submit">+</button>
+              </div>
+              <p class="form-error" data-form-error aria-live="polite"></p>
+            </form>
+
+            <div class="status-stack" aria-live="polite">
+              <div class="status-pill">
+                <span>Spieler</span>
+                <strong data-player-count>0/20</strong>
+              </div>
+              <div class="sort-status" data-sort-status hidden></div>
+            </div>
+
+            <div class="score-guide">
+              <p>Rot: +1, Farben: +2 bis +7.</p>
+              <p>Strafen koennen mit -1 und -4 gebucht werden.</p>
+            </div>
+          </aside>
+
+          <section class="player-list" aria-label="Aktuelle Rangliste">
+            <h2>Rangliste</h2>
+            <div class="empty-state" data-empty-state>
+              Noch keine Spieler. Fuege links den ersten Namen hinzu.
+            </div>
+            <div class="players" data-player-list></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      import "../scripts/scoreboard.js";
+    </script>
+  </body>
+</html>
