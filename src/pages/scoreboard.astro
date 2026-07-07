@@ -26,10 +26,13 @@ import "../styles/global.css";
 
       <main>
         <header class="scoreboard-header">
-          <p class="eyebrow">Live ranking</p>
-          <h1>Scoreboard</h1>
+          <div>
+            <p class="eyebrow">Live ranking</p>
+            <h1>Scoreboard</h1>
+          </div>
           <p class="lead">
-            Spieler hinzufuegen, Kugelwerte buchen und nach jeder Runde automatisch sortieren.
+            Frame-ready fuer grosse Screens: Spieler hinzufuegen, Kugelwerte buchen,
+            Ranking laufen lassen.
           </p>
         </header>
 
@@ -63,15 +66,34 @@ import "../styles/global.css";
             </div>
 
             <div class="score-guide">
+              <div class="ball-legend" aria-label="Snooker Punktwerte">
+                <span class="legend-ball ball-red">1</span>
+                <span class="legend-ball ball-yellow">2</span>
+                <span class="legend-ball ball-green">3</span>
+                <span class="legend-ball ball-brown">4</span>
+                <span class="legend-ball ball-blue">5</span>
+                <span class="legend-ball ball-pink">6</span>
+                <span class="legend-ball ball-black">7</span>
+              </div>
               <p>Rot: +1, Farben: +2 bis +7.</p>
               <p>Strafen koennen mit -1 und -4 gebucht werden.</p>
             </div>
           </aside>
 
           <section class="player-list" aria-label="Aktuelle Rangliste">
-            <h2>Rangliste</h2>
+            <div class="list-heading">
+              <div>
+                <p class="table-label">Baize table</p>
+                <h2>Rangliste</h2>
+              </div>
+              <div class="table-mark" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
             <div class="empty-state" data-empty-state>
-              Noch keine Spieler. Fuege links den ersten Namen hinzu.
+              Noch keine Spieler. Fuege links den ersten Namen hinzu und starte den Frame.
             </div>
             <div class="players" data-player-list></div>
           </section>
