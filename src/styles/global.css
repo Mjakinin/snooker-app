@@ -4,8 +4,6 @@
   --bg-elevated: #0f2119;
   --panel: rgba(13, 31, 24, 0.86);
   --panel-solid: #12281f;
-  --rail: #6d3f1d;
-  --rail-dark: #321d10;
   --border: rgba(202, 232, 218, 0.18);
   --text: #f4fbf7;
   --muted: #b8c8bf;
@@ -213,7 +211,7 @@ input:focus-visible {
 }
 
 .app-page .site-nav {
-  padding: 20px 0 12px;
+  padding: 14px 0 8px;
 }
 
 .scoreboard-header {
@@ -221,12 +219,12 @@ input:focus-visible {
   align-items: end;
   justify-content: space-between;
   gap: 28px;
-  padding: 10px 0 18px;
+  padding: 4px 0 14px;
 }
 
 .scoreboard-header h1 {
   max-width: none;
-  font-size: 4rem;
+  font-size: 3.55rem;
   line-height: 0.95;
 }
 
@@ -238,7 +236,7 @@ input:focus-visible {
   max-width: 520px;
   margin: 0 0 6px;
   font-size: 1.1rem;
-  line-height: 1.55;
+  line-height: 1.45;
   text-align: right;
 }
 
@@ -396,21 +394,11 @@ input:focus-visible {
   border: 1px solid rgba(202, 232, 218, 0.2);
   border-radius: 8px;
   background:
-    linear-gradient(90deg, var(--rail-dark), var(--rail) 2%, transparent 2%),
+    radial-gradient(circle at 94% 8%, rgba(49, 210, 124, 0.12), transparent 24%),
     linear-gradient(180deg, rgba(28, 82, 54, 0.34), rgba(8, 24, 18, 0.76));
   box-shadow: var(--shadow);
   min-height: calc(100vh - 210px);
-  padding: 18px 18px 20px 28px;
-}
-
-.player-list::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 8px;
-  background: linear-gradient(90deg, #2f1b0e, #8a552a 22%, #3f2412 52%, #8a552a);
-  content: "";
+  padding: 14px 18px 18px;
 }
 
 .list-heading {
@@ -418,7 +406,7 @@ input:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .table-label {
@@ -455,24 +443,28 @@ input:focus-visible {
   font-size: 1.2rem;
 }
 
+.empty-state[hidden] {
+  display: none;
+}
+
 .players {
   display: grid;
-  gap: 16px;
+  gap: 8px;
 }
 
 .player-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(130px, 170px);
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, 130px);
+  gap: 18px;
   align-items: center;
   border: 1px solid var(--border);
-  border-left: 8px solid rgba(49, 210, 124, 0.82);
+  border-left: 6px solid rgba(49, 210, 124, 0.82);
   border-radius: 8px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(224, 237, 229, 0.96)),
     #f4fbf7;
   color: #07110d;
-  padding: 24px 26px;
+  padding: 14px 20px;
   box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
 }
 
@@ -504,8 +496,8 @@ input:focus-visible {
 
 .player-name {
   overflow-wrap: anywhere;
-  margin: 8px 0 16px;
-  font-size: 2.55rem;
+  margin: 6px 0 10px;
+  font-size: 2rem;
   font-weight: 900;
   line-height: 1.12;
 }
@@ -518,8 +510,8 @@ input:focus-visible {
 
 .score-button,
 .delete-button {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 999px;
   cursor: pointer;
   font-size: 1rem;
@@ -586,14 +578,14 @@ input:focus-visible {
 
 .player-score {
   display: grid;
-  min-width: 130px;
+  min-width: 100px;
   justify-items: end;
   gap: 2px;
 }
 
 .score-value {
   font-variant-numeric: tabular-nums;
-  font-size: 5.4rem;
+  font-size: 3.8rem;
   font-weight: 950;
   line-height: 0.92;
 }
@@ -607,7 +599,7 @@ input:focus-visible {
 
 @media (min-width: 1500px) {
   .scoreboard-header h1 {
-    font-size: 4.5rem;
+    font-size: 3.8rem;
   }
 
   .scoreboard-layout {
@@ -615,23 +607,23 @@ input:focus-visible {
   }
 
   .player-card {
-    grid-template-columns: minmax(0, 1fr) minmax(150px, 210px);
-    padding: 28px 32px;
+    grid-template-columns: minmax(0, 1fr) minmax(110px, 150px);
+    padding: 16px 22px;
   }
 
   .player-name {
-    font-size: 3rem;
+    font-size: 2.25rem;
   }
 
   .score-button,
   .delete-button {
-    width: 56px;
-    height: 56px;
-    font-size: 1.08rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
   }
 
   .score-value {
-    font-size: 6.4rem;
+    font-size: 4.4rem;
   }
 }
 
@@ -641,18 +633,18 @@ input:focus-visible {
   }
 
   .player-name {
-    font-size: 3.55rem;
+    font-size: 2.45rem;
   }
 
   .score-button,
   .delete-button {
-    width: 62px;
-    height: 62px;
-    font-size: 1.16rem;
+    width: 46px;
+    height: 46px;
+    font-size: 1rem;
   }
 
   .score-value {
-    font-size: 7.4rem;
+    font-size: 4.8rem;
   }
 }
 
