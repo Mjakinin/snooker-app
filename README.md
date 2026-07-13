@@ -2,6 +2,8 @@
 
 Eigenstaendige Astro-App fuer ein oeffentliches Snooker-Scoreboard.
 
+<img width="1919" height="1079" alt="grafik" src="https://github.com/user-attachments/assets/c97e4566-9d63-43be-b923-2aaf7adb13e4" />
+
 ## Funktionen
 
 - Kurze Startseite unter `/`
